@@ -29,7 +29,7 @@ loader.classList.add("loader");
 chatWindow.appendChild(loader);
 
 // Call the server API using a relative URL
-const response = await fetch("http://localhost:3000/api/chat", {
+const response = await fetch("https://mon-chatbot-backend.onrender.com", {
   method: "POST",
   headers: {
       "Content-Type": "application/json"

@@ -29,19 +29,22 @@ loader.classList.add("loader");
 chatWindow.appendChild(loader);
 
 // Call the server API using a relative URL
-const response = await fetch("https://mon-chatbot-backend.onrender.com", {
-  method: "POST",
+const response = fetch("https://mon-chatbot-backend.onrender.com/api/chat", {
+  method: "POST",  // Assure-toi d'utiliser POST
   headers: {
-      "Content-Type": "application/json"
+    "Content-Type": "application/json",
   },
-  body: JSON.stringify({ message: userMessage })
-});
+  body: JSON.stringify({
+    message: userMessage,
+  }),
+})
+  .then((response) => response.json())
+  .then((data) => {
+    // Traiter la réponse ici
+  })
+  .catch((error) => console.error("Erreur:", error));
 
-// Check if the response is OK
-if (!response.ok) {
-  throw new Error("Server error: " + response.status);
-}
-
+  
 const data = await response.json();
 
 // Remove the loader

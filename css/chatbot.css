@@ -1,0 +1,184 @@
+:root {
+    --gray: #f5f5ff;
+    --blue: #3d8bf9;
+    --black: #1a1a1a;
+}
+
+.chat-button{
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    height: 80px;
+    width: 80px;
+    background-image: linear-gradient(to right bottom, #3ef9e8, #00cae0, #009bcc, #006caa, #1d3e7c);
+    display: flex;
+    z-index: 998;
+    border-radius: 100%;
+    color: white;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    justify-content: center;
+
+    img{
+        width: 72px;
+    }
+
+    &:hover{
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+}
+
+.chat-window.open{
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    height: 500px;
+    width: 360px;
+    display: flex;
+    z-index: 999;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: white;
+    overflow-y: auto; /* Utilise 'auto' pour éviter le scroll fantôme */
+    border-radius: 20px;
+    box-sizing: border-box; /* Garantit aucune dimension parasite */
+}
+.chat-window {
+    *{
+        font-family: "Haleway", sans-serif;
+    }
+
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    height: 500px;
+    width: 360px;
+    display: none;
+    z-index: 998;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: white;
+    overflow-y: auto; /* Utilise 'auto' pour éviter le scroll fantôme */
+    border-radius: 20px;
+    box-sizing: border-box; /* Garantit aucune dimension parasite */
+}
+
+.chat-window::-webkit-scrollbar {
+    width: 8px; /* Largeur visible de la barre */
+}
+
+.chat-window::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Arrière-plan */
+    border-radius: 10px;
+}
+
+.chat-window::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+.chat-window::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Fix des espaces internes */
+.chat {
+    flex: 1; /* Remplit l'espace disponible */
+    padding: 8px; /* Uniformise les marges internes */
+    box-sizing: border-box; /* Corrige la gestion des dimensions */
+    overflow-y: auto; /* Ajoute le défilement seulement si nécessaire */
+}
+
+/* Fermeture du bouton */
+.close {
+    background-color: var(--black);
+    color: white;
+    border: none;
+    border-radius: 20px 20px 0 0;
+    padding: 8px 0;
+    cursor: pointer;
+}
+
+/* Gestion des messages */
+.chat p {
+    border-radius: 20px;
+    width: 80%;
+    margin: 8px 0;
+    padding: 16px;
+}
+
+div.error-model p{
+    text-align: center;
+    color : #d00c0c;
+}
+
+.chat div.model p {
+    background-color: var(--gray);
+}
+
+.chat div.user {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.chat div.user p {
+    background-color: var(--blue);
+    color: #ffffff;
+}
+
+/* Zone de saisie */
+.input-area {
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 8px;
+}
+
+.input-area input {
+    height: 40px;
+    flex: 1;
+    border: none;
+    background-color: var(--gray);
+    border-radius: 20px;
+    padding-left: 20px;
+}
+
+.input-area button {
+    height: 40px;
+    border-radius: 100%;
+    border: none;
+    margin-left: 12px;
+    background-color: var(--blue);
+    color: white;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    
+    &:hover{
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+}
+
+.input-area button img {
+    width: 18px;
+}
+
+
+/* HTML: <div class="loader"></div> */
+/* HTML: <div class="loader"></div> */
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 40px;
+  aspect-ratio: 4;
+  opacity:0.4;
+  background: radial-gradient(circle closest-side,#000 90%,#0000) 0/calc(100%/3) 100% space;
+  clip-path: inset(0 100% 0 0);
+  animation: l1 1.5s steps(4) infinite;
+}
+@keyframes l1 {to{clip-path: inset(0 -34% 0 0)}}

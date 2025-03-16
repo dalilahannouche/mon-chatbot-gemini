@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap" rel="stylesheet">
+        <title>Home - Tech Shop</title>
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/chatbot.css">
+    </head>
+
+    <body> 
+        <header> 
+            <div class="container">
+                <section class="logo">
+                    <b>VR</b>
+                    <span class="blue-dot"></span>
+                    <span class="blue-dot"></span>
+                    <span>Headsets</span>
+                </section>
+                <nav>
+                    <ul>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Promotions</a></li>
+                        <li><a href="#">Newsletter</a></li>
+                        <li class="menu-icon"><img src="images/menu_icon.png" alt=""></li>
+                    </ul>
+                </nav>
+                
+            </div>
+        </header>
+
+        <section class="hero">
+            <picture>
+                <source media="(max-width: 576px)" srcset="images/Hero_Mobile.jpg">
+                <source media="(max-width: 960px)" srcset="images/Hero_Tablet.jpg">
+                <source media="(max-width: 1440px)" srcset="images/Hero_Desktop.jpg">
+                <img src="images/Hero_Large_Desktop.jpg" alt="hero image - VR headset">
+            </picture>
+
+            <div class="hero-content">
+                <div class="container">
+                    <h1>Discover our line of VR Headsets</h1>
+                    <p>Sed ut perspiciatis unde omnis iste
+                       natuserror sit voluptatem accusantium
+                       doloremque laudantium.
+                    </p>
+                    <button>View headsets</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="best-sellers">
+            <h2>Best Sellers</h2>
+            <hr>
+            <div class="product-slider">
+                <div class="container">
+                    <div class="product new">
+                        <div class="product-picture">
+                            <img src="images/vr1.jpg" alt="product: Apple's VR">
+                        </div>
+                        <div class="product-info">
+                            <h5>Smart Watches, Cases, Apple</h5>
+                            <h4>Penom Case for Apple Watch</h4>
+                            <div class="price">
+                                <h3>US$ 6.99</h3>
+                            </div>
+                            <button>
+                                Add to bag
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product new">
+                        <div class="product-picture new">
+                            <img src="images/vr2.jpg" alt="product: Apple's VR">
+                        </div>
+                        <div class="product-info">
+                            <h5>Headphones, Audio, Sound</h5>
+                            <h4>Noise Cancelling Headphone</h4>
+                            <div class="price">
+                                <h3>US$ 18.49</h3>
+                            </div>
+                            <button>
+                                Add to bag
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="product-picture">
+                            <img src="images/vr3.jpg" alt="product: Apple's VR">
+                        </div>
+                        <div class="product-info">
+                            <h5>Cameras, Kits, Photo & Video</h5>
+                            <h4>Canon Digital SLR EOS Rebel T6</h4>
+                            <div class="price discount">
+                                <h3>US$ 396.89</h3>
+                                <span class="original-price">US$ 499.99</span>
+                            </div>
+                            <button>
+                                Add to bag
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="newsletter">
+                <h3>Newsletter signup</h3>
+                <p>Subscribe now and don't miss a single deal!</p>
+    
+                <input type="email" placeholder="Your Email..." ><button type="submit">Subscribe</button>
+
+        </section>
+
+        <footer>
+            <div class="container">
+                <ul>
+                    <li class="list-title">Categories</li>
+                    <li><a href="#">Watches</a></li>
+                    <li><a href="#">Cameras</a></li>
+                    <li><a href="#">Phones</a></li>
+                    <li><a href="#">Tablets</a></li>
+                    <li><a href="#">Computers</a></li>
+                </ul>
+                <ul>
+                    <li class="list-title">About us</li>
+                    <li><a href="#">Our Story</a></li>
+                    <li><a href="#">Press</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Awards</a></li>
+                    <li><a href="#">Stores</a></li>
+                </ul>
+                <ul>
+                    <li class="list-title">Social Media</li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Linkedin</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Youtube</a></li>
+                </ul>
+                <ul>
+                    <li class="list-title">Customer Service</li>
+                    <li><a href="#">Live Chat</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Delivery & Returns</a></li>
+                    <li><a href="#">Finance</a></li>
+                </ul>
+            </div>
+        </footer>
+
+        <section class="copyright">
+            2024 &reg; All Rights Reserved, Dalila Hannouche
+        </section>
+
+        <!--Chatbot-->
+        <section class="chat-window">
+            <button class="close"> x close </button>
+
+            <div class="chat">
+                
+            
+            </div>
+            
+            
+            
+            <div class="input-area">
+                <input placeholder="Ask me anything..."  type="text">
+                <button>
+                    <img src="icons/send-icon.png" alt="Send Icon">
+                </button>
+            </div>
+        </section>
+
+        <div class="chat-button">
+            <img src="icons/chatbot-icon.gif" alt="Start chat">
+        </div>
+    <script type="importmap">
+        {
+          "imports": {
+            "@google/generative-ai": "https://esm.run/@google/generative-ai"
+          }
+        }
+    </script>
+    <script type="module" src="js/chatbot.js" defer></script>
+     
+    </body>
+
+</html>

@@ -29,23 +29,28 @@ loader.classList.add("loader");
 chatWindow.appendChild(loader);
 
 // Call the server API using a relative URL
-const response = fetch("https://mon-chatbot-backend.onrender.com/api/chat", {
-  method: "POST",  // Assure-toi d'utiliser POST
-  headers: {
-    "Content-Type": "application/json",
-  },
-  body: JSON.stringify({
-    message: userMessage,
-  }),
-})
-  .then((response) => response.json())
-  .then((data) => {
-    // Traiter la réponse ici
-  })
-  .catch((error) => console.error("Erreur:", error));
+async function sendMessage(userMessage) {
+  try {
+    const response = await fetch("https://mon-chatbot-backend.onrender.com/api/chat", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ message: userMessage }),
+    });
 
-  
-const data = await response.json();
+    if (!response.ok) {
+      throw new Error("Erreur du serveur, essayez plus tard.");
+    }
+
+    const data = await response.json();
+    return data;  // Retourne la réponse du chatbot
+  } catch (error) {
+    console.error("Erreur :", error);
+    return { error: "Une erreur s'est produite, veuillez réessayer plus tard." };
+  }
+}
+
 
 // Remove the loader
 loader.remove();

@@ -60,18 +60,19 @@ async function sendMessage() {
     const data = await response.json();
     console.log("Réponse du serveur :", data); // Debugging
 
-    // Vérifie la structure de la réponse
-    if (!data || (!data.reply && !data.message)) {  // Vérifie les deux possibilités
+    // Vérifie si 'message' est présent dans la réponse
+    if (!data || !data.message) {  
       throw new Error("Réponse invalide du serveur.");
     }
 
-    const botReply = data.reply || data.message; // Récupère `reply` ou `message`
+    // Utilise la clé 'message' dans la réponse
+    const botReply = data.message;
 
     // Affiche la réponse du chatbot
     if (botReply) {
       displayMessage(botReply);
     } else {
-      console.warn("La réponse du serveur ne contient ni 'reply' ni 'message'.");
+      console.warn("La réponse du serveur ne contient pas 'message'.");
     }
 
     // Remove the loader

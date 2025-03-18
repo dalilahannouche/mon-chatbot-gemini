@@ -32,25 +32,25 @@ chatWindow.appendChild(loader);
 async function sendMessage(userMessage) {
   try {
     const response = await fetch("https://mon-chatbot-backend.onrender.com/api/chat", {
-      method: "POST",
+      method: "POST",  
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ message: userMessage }),
     });
 
-    // Vérifie si la réponse est OK avant de parser le JSON
+    // Vérifie si la requête a réussi
     if (!response.ok) {
       throw new Error("Erreur du serveur, essayez plus tard.");
     }
 
-    console.log(response);
+    // Attends et stocke la réponse JSON
+    const data = await response.json();
+    console.log("Réponse du serveur :", data); // Debug
 
-    const data = await response.json(); // Ici, on définit bien `data`
+    // Ici, utilise `data` correctement
+    displayMessage(data.reply);
 
-    console.log("Réponse du chatbot :", data); // Vérifier la structure des données
-
-    return data; // Retourner la réponse pour l'afficher ensuite
   } catch (error) {
     console.error("Error while sending message:", error);
   }

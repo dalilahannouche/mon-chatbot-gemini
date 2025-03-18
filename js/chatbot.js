@@ -121,6 +121,24 @@ document.querySelector(".chat-button").addEventListener("click", () => {
   document.querySelector(".chat-window").classList.add("open"); 
 });
 
+// Fonction pour afficher le message du chatbot
+function displayMessage(message) {
+  const chatWindow = document.querySelector(".chat-window .chat");
+
+  // Créer un élément pour le message du modèle
+  const modelDiv = document.createElement("div");
+  modelDiv.classList.add("model");
+
+  const modelP = document.createElement("p");
+  modelP.textContent = message;
+
+  modelDiv.appendChild(modelP);
+  chatWindow.appendChild(modelDiv);
+
+  // Défilement automatique vers le bas de la fenêtre de chat
+  chatWindow.scrollTop = chatWindow.scrollHeight;
+}
+
 // Close the Chatbot 
 document.querySelector(".chat-window button.close").addEventListener("click", () => { 
   document.querySelector(".chat-window").classList.remove("open"); 

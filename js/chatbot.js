@@ -39,20 +39,27 @@ async function sendMessage(userMessage) {
       body: JSON.stringify({ message: userMessage }),
     });
 
+    // Ajout de log pour voir si la réponse HTTP est reçue
+    console.log("Statut de la réponse :", response.status);
+
     // Vérifie si la requête a réussi
     if (!response.ok) {
-      throw new Error("Erreur du serveur, essayez plus tard.");
+      throw new Error(`Erreur du serveur: ${response.status} ${response.statusText}`);
     }
 
-    // Attends et stocke la réponse JSON
+    // Ajoute un test avant d'accéder à `data`
     const data = await response.json();
-    console.log("Réponse du serveur :", data); // Debug
+    console.log("Réponse du serveur :", data); // Debugging
 
-    // Ici, utilise `data` correctement
+    // Vérifie que `data.reply` existe avant de l'utiliser
+    if (!data || !data.reply) {
+      throw new Error("Réponse invalide du serveur.");
+    }
+
     displayMessage(data.reply);
 
   } catch (error) {
-    console.error("Error while sending message:", error);
+    console.error("Error while sending message:", error.message);
   }
 }
 

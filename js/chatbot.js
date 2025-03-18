@@ -44,6 +44,8 @@ async function sendMessage(userMessage) {
       throw new Error("Erreur du serveur, essayez plus tard.");
     }
 
+    console.log(response);
+
     const data = await response.json(); // Ici, on définit bien `data`
 
     console.log("Réponse du chatbot :", data); // Vérifier la structure des données

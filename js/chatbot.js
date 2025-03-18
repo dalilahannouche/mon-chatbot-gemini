@@ -39,15 +39,18 @@ async function sendMessage(userMessage) {
       body: JSON.stringify({ message: userMessage }),
     });
 
+    // Vérifie si la réponse est OK avant de parser le JSON
     if (!response.ok) {
       throw new Error("Erreur du serveur, essayez plus tard.");
     }
 
-    const data = await response.json();
-    return data;  // Retourne la réponse du chatbot
+    const data = await response.json(); // Ici, on définit bien `data`
+
+    console.log("Réponse du chatbot :", data); // Vérifier la structure des données
+
+    return data; // Retourner la réponse pour l'afficher ensuite
   } catch (error) {
-    console.error("Erreur :", error);
-    return { error: "Une erreur s'est produite, veuillez réessayer plus tard." };
+    console.error("Error while sending message:", error);
   }
 }
 

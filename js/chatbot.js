@@ -68,23 +68,11 @@ async function sendMessage() {
     // Utilise la clé 'message' dans la réponse
     const botReply = data.message;
 
-    // Affiche la réponse du chatbot
-    if (botReply) {
-      displayMessage(botReply);
-    } else {
-      console.warn("La réponse du serveur ne contient pas 'message'.");
-    }
-
     // Remove the loader
     loader.remove();
 
-    // Display the server's response
-    const modelDiv = document.createElement("div");
-    modelDiv.classList.add("model");
-    const modelP = document.createElement("p");
-    modelP.textContent = botReply;
-    modelDiv.appendChild(modelP);
-    chatWindow.appendChild(modelDiv);
+    // Affiche la réponse du chatbot
+    displayMessage(botReply);
 
     // Update message history if needed
     messages.history.push(
